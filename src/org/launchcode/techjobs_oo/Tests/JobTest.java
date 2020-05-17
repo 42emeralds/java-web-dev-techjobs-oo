@@ -30,7 +30,7 @@ public class JobTest {
     public void testJobConstructorSetsAllFields () {
         Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        //assertTrue(newJob.getId() instanceof int);
+        //id int
         assertTrue(newJob.getName() instanceof String);
         assertTrue(newJob.getEmployer() instanceof Employer);
         assertTrue(newJob.getLocation() instanceof Location);
