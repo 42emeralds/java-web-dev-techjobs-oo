@@ -47,6 +47,31 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+        if (this.getName() == null && this.getEmployer() == null && this.getLocation() == null && this.getPositionType() == null && this.getCoreCompetency() == null) {
+            return "OOPS! This job does not seem to exist.";
+        }
+        if (this.getName() == "") {
+            name = "Data not available";
+        } if (this.getEmployer().equals("")) {
+            employer = new Employer ( "Data not available");
+        } if (this.getLocation().equals("")) {
+            location = new Location ("Data not available");
+        } if (this.getPositionType().equals("")) {
+            positionType = new PositionType("Data not available");
+        } if (this.getCoreCompetency().equals("")) {
+            coreCompetency = new CoreCompetency("Data not available");
+        }
+        return "\n" +
+                "ID: " + this.getId() + "\n" +
+                "Name: " + this.getName() + "\n" +
+                "Employer: " + this.getEmployer() + "\n" +
+                "Location: " + this.getLocation() + "\n" +
+                "Position Type: " + this.getPositionType() + "\n" +
+                "Core Competency: " + this.getCoreCompetency() + "\n";
+
+    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
@@ -95,4 +120,5 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
 }
